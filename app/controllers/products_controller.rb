@@ -1,8 +1,15 @@
 class ProductsController < ApplicationController
-
-
   def index
-    @products = Product.all
+    case
+    when params[:sort] == "most_reviews"
+      @products = Product.most_reviews
+    when params[:sort] == "local_product"
+      @products = Product.local_product
+    when params[:sort] == "most_recent"
+      @products = Product.most_recent
+    else
+      @products = Product.all
+    end
     render :index
   end
 
@@ -12,7 +19,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
+    @product = Product.new(products_params)
     if @product.save
       flash[:notice] = "Product successfully added!"
       redirect_to products_path
@@ -34,7 +41,7 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    if @product.update(product_params)
+    if @product.update(products_params)
       flash[:notice] = "Product successfully updated"
       redirect_to products_path
     else
@@ -50,8 +57,8 @@ class ProductsController < ApplicationController
   end
 
   private
+
   def products_params
     params.require(:product).permit(:name, :country_of_orgin, :cost)
   end
-
 end
