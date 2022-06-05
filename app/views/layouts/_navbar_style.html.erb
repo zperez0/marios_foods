@@ -1,0 +1,18 @@
+<header>
+  <div class="container">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button class="btn btn-link"><%= link_to "Home", root_path, class: "nav-brand" %></button>
+        </div>
+
+      <ul class="nav navbar-nav navbar-right">  
+        <a href="?sort=most_recent"><button class="btn btn-link">Recently added</button></a>
+        <a href="?sort=most_reviews"><button class="btn btn-link">Most Reviews</button></a>
+        <a href="?sort=local_product"><button class="btn btn-link">USA Products</button></a>
+        <button class="btn btn-link"><%= link_to "All Products", root_path %></button>
+        <button class="btn btn-link"><%= link_to "New Product", new_product_path %></button>
+      </ul>
+    </div>
+  </nav>
+</header>
