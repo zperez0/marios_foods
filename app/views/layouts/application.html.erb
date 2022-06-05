@@ -1,19 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang ="en">
   <head>
     <title>MariosFoods</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track': "reload" %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
+  <%= render "layouts/navbar_style" %>
 
-  <%= flash[:alert] %>
-  <%= flash[:notice] %>
+  <div class="title-container">
+    <h1>Mario's Speciality Foods</h1>
+  </div>
 
-    <%= yield %>
+<section class="container">
+  <div id="flash">
+    <% flash.each do |key, value| %>
+      <div class="flash alert <%= alert_class(key) %>"><%= value %></div>
+    <% end %>
+  </div>
+
+      <%= yield %>
+    </section>
   </body>
 </html>
