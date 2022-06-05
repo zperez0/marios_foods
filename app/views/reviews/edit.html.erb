@@ -1,11 +1,24 @@
-<h1>Edit review:</h1>
+<div class="title-container">
+  <h2>Edit review:</h2>
+</div>
 
-<%= form_for [@product, @review] do |f| %>
-  <%= f.label :author %>
-  <%= f.text_field :author %>
-  <%= f.label :content_body %>
-  <%= f.text_area :content_body %>
-  <%= f.label :rating %>
-    <%= f.number_field :rating, min: 1, max: 5 %>
-  <p><%= f.submit %></p>
+<%= form_for [@product, @review] do |form| %>
+  <div class="form-group">
+    <%= form.label :author %>
+    <%= form.text_field :author, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :content_body %>
+    <%= form.text_area :content_body, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+      <%= form.label :rating %>
+      <%= form.number_field :rating, min: 1, max: 5, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
 <% end %>
