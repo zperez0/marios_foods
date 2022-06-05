@@ -1,17 +1,27 @@
-<h3>Welcome!</h3>
-<p>Mario's is a mushroom kingdom-based specialty store run by a family.
-You can find one-of-a-kind things from all over the world. Take a look around, maybe buy something, and write a review! 
-<h1>Products</h1>
+<div class="title-container">
+  <h3>Welcome</h3>
+</div>
+  <p>Mario's is a mushroom kingdom-based specialty store run by a family.
+    You can find one-of-a-kind things from all over the world. Take a look around, maybe buy something, and write a review!</p>
+    
+<div class="title-container">
+  <h2>Products</h2>
+</div>
 
-<% if @products.any? %>
-  <ul>
-    <% @products.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
-    <% end %>
-  </ul>
-<% else %> 
-  <p>There are no products yet.</p>
-<% end %>
-
-
-<p><%= link_to "Create new product", new_product_path %></p>
+<div class="products">
+  <% if @products.any? %>
+    <ul>
+      <% @products.each do |product| %>
+        <div class="product">
+          <div class="thumbmail">
+            <div class="caption">
+              <p><li><%= link_to product.name, product_path(product) %></li></p>
+      <% end %>
+    </ul>
+  <% else %> 
+            </div>
+          </div>
+        </div>
+      <p>There are no products yet.</p>
+  <% end %>
+</div>
