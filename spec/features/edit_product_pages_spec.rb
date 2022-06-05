@@ -2,8 +2,7 @@ require 'rails_helper'
 
 describe "the edit a product process" do
   before :each do
-    visit root_path
-    click_link 'Create new product'
+    visit new_product_path
     fill_in 'Name', with: 'Cheese Sauce'
     fill_in 'Cost', with: '56'
     select 'United States of America', from: 'product_country_of_orgin'

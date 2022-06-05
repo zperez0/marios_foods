@@ -2,8 +2,7 @@ require 'rails_helper'
 
 describe "the add a product process" do
   it "adds a new product" do
-    visit products_path
-    click_link 'Create new product'
+    visit new_product_path
     fill_in 'Name', with: 'Cheese Sauce'
     fill_in 'Cost', with: '56'
     select 'United States of America', from: 'product_country_of_orgin'
