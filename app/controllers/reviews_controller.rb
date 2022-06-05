@@ -1,7 +1,4 @@
 class ReviewsController < ApplicationController
-
-  #add scopes?
-
   def new
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new
@@ -10,7 +7,7 @@ class ReviewsController < ApplicationController
 
   def create
     @product = Product.find(params[:product_id])
-    @review = @product.reviews.new(song_params)
+    @review = @product.reviews.new(review_params)
     if @review.save
       flash[:notice] = "Review successfully added!"
       redirect_to product_path(@product)
@@ -51,8 +48,8 @@ class ReviewsController < ApplicationController
   end
 
   private
-    def review_params
-      params.require(:review).permit(:author, :content_body, :rating)
-    end
 
+  def review_params
+    params.require(:review).permit(:author, :content_body, :rating)
+  end
 end
