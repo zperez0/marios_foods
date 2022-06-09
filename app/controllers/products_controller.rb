@@ -1,16 +1,14 @@
 class ProductsController < ApplicationController
   def index
-    case
-    when params[:sort] == "most_reviews"
-      @products = Product.most_reviews
-    when params[:sort] == "local_product"
-      @products = Product.local_product
-    when params[:sort] == "most_recent"
-      @products = Product.most_recent
-    else
-      @products = Product.all
-    end
+    @products = Product.all
     render :index
+  end
+
+  def home
+    @products_most_reviews = Product.most_reviews
+    @products_local_product = Product.local_product
+    @products_most_recent = Product.most_recent
+    render :home
   end
 
   def new
