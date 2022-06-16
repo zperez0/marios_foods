@@ -1,2 +1,8 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.full_name %></h1>
+<p><strong>Admin:</strong> <%= @user.admin? %></p>
+<h3>Bio</h3>
+<p><%= @user.bio %></p>
+<br>
+<% if current_user.id == @user.id %>
+  <%= link_to 'Edit My Profile', edit_user_path(current_user), class: 'btn btn-primary' %>
+<% end %>
