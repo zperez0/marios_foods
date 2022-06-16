@@ -1,7 +1,6 @@
 <div class="title-container">
   <h2>Products</h2>
 </div>
-
 <div class="products">
   <% if @products.any? %>
     <ul>
@@ -9,13 +8,15 @@
         <div class="product">
           <div class="thumbmail">
             <div class="caption">
-              <p><li><%= link_to product.name, product_path(product) %></li></p>
-      <% end %>
-    </ul>
-  <% else %> 
-            </div>
-          </div>
+              <p>
+                <li><%= link_to product.name, product_path(product) %></li>
+              </p>
+            <% end %>
+          </ul>
+        <% else %>
         </div>
-      <p>There are no products yet.</p>
+      </div>
+    </div>
+    <p>There are no products yet.</p>
   <% end %>
 </div>
