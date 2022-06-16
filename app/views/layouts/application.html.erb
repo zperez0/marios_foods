@@ -4,27 +4,44 @@
     <title>MariosFoods</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track': "reload" %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-
   <body>
-  <%= render "layouts/navbar_style" %>
-
-  <div class="title">
-    <h1>Mario's Speciality Foods</h1>
-  </div>
-
-<section class="container">
-  <div id="flash">
-    <% flash.each do |key, value| %>
-      <div class="flash alert <%= alert_class(key) %>"><%= value %></div>
-    <% end %>
-  </div>
-
-      <%= yield %>
-    </section>
+    <div class="header">
+      <div class="jumbotron text-center" style="margin-bottom:0">
+        <h1>Mario's Speciality Foods</h1>
+        <div style="margin-bottom:40">
+        </div>
+      </div>
+    </div>
+    <%= render "layouts/navbar_style" %>
+    <%= render "layouts/alerts" %>
+    <%= yield %>
+    <br>
+    <br>
+    <div class="footer">
+      <div class="jumbotron text-center" style="margin-bottom:0">
+        <div class="container-fluid" style="margin-top:30px">
+          <div class="row">
+            <div class="col-sm-4">
+              <h3>Find us</h3>
+              <p>1234 SW Mushroom Blvd.
+                Mushroom Kingdom 32219</p>
+              <p>8am-10pm Daily</p>
+            </div>
+            <div class="col-sm-4">
+              <h3>Say hello</h3>
+              <p>For questions, concerns, or to just say hi, email us at mariosfoods@hotfoods.com</p>
+            </div>
+            <div class="col-sm-4">
+              <h3>Connect with us</h3>
+              <p>Follow us on any social media site @mariosfoods</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
