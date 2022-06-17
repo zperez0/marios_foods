@@ -1,49 +1,52 @@
 <div class="title-container">
-  <h3>Welcome</h3>
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title">✨ Welcome ✨</h3>
+      <p class="card-text">Mario's is a mushroom kingdom-based specialty store run by a family. You can find one-of-a-kind things from all over the world. Take a look around, maybe buy something, and write a review!</p>
+    </div>
+  </div>
 </div>
-<p>
-  Mario's is a mushroom kingdom-based specialty store run by a family. You can
-  find one-of-a-kind things from all over the world. Take a look around, maybe
-  buy something, and write a review!
-</p>
-<hr />
+<div class="img-fluid">
+  <div class="mario_banner">
+    <%= image_tag "mario_banner.png" %>
+  </div>
+</div>
 <div class="container-fluid">
+<div class="scopes">
   <div class="row">
     <div class="col-sm-3 col-md-6 col-lg-4">
       <div class="title-container">
-        <h4>Recently added</h4>
+        <h3>Recently added</h3>
       </div>
+
       <ul>
         <% @products_most_recent.each do |product| %>
-          <p>
-            <li><%= link_to product.name, product_path(product) %></li>
-          </p>
+        <p><li><%= link_to product.name, product_path(product) %></li></p>
         <% end %>
       </ul>
     </div>
+
     <div class="col-sm-3 col-md-6 col-lg-4">
       <div class="title-container">
-        <h4>Most Reviews</h4>
+        <h3>Most Reviews</h3>
       </div>
       <ul>
         <% @products_most_reviews.each do |product| %>
-          <p>
-            <li><%= link_to product.name, product_path(product) %></li>
-          </p>
+        <p><li><%= link_to product.name, product_path(product) %></li></p>
         <% end %>
       </ul>
     </div>
+
     <div class="col-sm-3 col-md-6 col-lg-4">
       <div class="title-container">
-        <h4>USA Products</h4>
+        <h3>USA Products</h3>
       </div>
       <ul>
         <% @products_local_product.each do |product| %>
-          <p>
-            <li><%= link_to product.name, product_path(product) %></li>
-          </p>
+        <p><li><%= link_to product.name, product_path(product) %></li></p>
         <% end %>
       </ul>
     </div>
   </div>
+</div>
 </div>
