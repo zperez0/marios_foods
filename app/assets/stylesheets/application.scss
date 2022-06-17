@@ -14,12 +14,48 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body {
-  background-color: #F4F4F8;
+.body {
+  background-color: #fff;
 }
 .navbar {
-  background-color: #F4F4F8;
+  a {
+    color: var(--bs-blue);
+  }
 }
+.card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  display: flex;
+  text-align: center;
+  width: 50rem;
+  font-size: large;
+}
+
+.mario_logo {
+  height: 300px;
+  color: inherit;
+  text-align: center;
+  background-size: cover;
+}
+
+.mario_banner {
+  padding-bottom: 50px;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.scopes {
+  margin: 0 auto;
+  float: inline;
+  margin-bottom: 20px;
+  padding-bottom: 60px;
+  padding-left: 130px;
+  display: inline-flexbox;
+  font-size: medium;
+  width: 130rem;
+}
+
 .title {
   display: flex;
   justify-content: space-between;
@@ -45,4 +81,4 @@ body {
 .product {
   width: 30%;
   min-width: 300px;
-  }
+}
