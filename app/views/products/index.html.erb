@@ -1,22 +1,28 @@
 <div class="title-container">
-  <h2>Products</h2>
+  <div class="products-title">
+    <div class="jumbotron jumbotron-fluid" style="background-color:#ceeee0;">
+      <div class="container">
+        <h2>Products</h2>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="products">
-  <% if @products.any? %>
-    <ul>
-      <% @products.each do |product| %>
-        <div class="product">
-          <div class="thumbmail">
-            <div class="caption">
+<% if @products.any? %>
+  <ul>
+    <% @products.each do |product| %>
+      <div class="products">
+        <div class="row">
+          <div class="col-sm-3 col-md-6 col-lg-4">
+            <div class="title-container">
               <p>
                 <li><%= link_to product.name, product_path(product) %></li>
               </p>
-            <% end %>
-          </ul>
-        <% else %>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <p>There are no products yet.</p>
-  <% end %>
-</div>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no products yet.</p>
+<% end %>
