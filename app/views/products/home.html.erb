@@ -1,8 +1,10 @@
 <div class="title-container">
-  <div class="card">
-    <div class="card-body">
-      <h3 class="card-title">✨ Welcome ✨</h3>
-      <p class="card-text">Mario's is a mushroom kingdom-based specialty store run by a family. You can find one-of-a-kind things from all over the world. Take a look around, maybe buy something, and write a review!</p>
+  <div id="bio">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">✨ Welcome ✨</h2>
+        <p class="card-text">Mario's is a mushroom kingdom-based specialty store run by a family. You can find one-of-a-kind things from all over the world. Take a look around, maybe buy something, and write a review!</p>
+      </div>
     </div>
   </div>
 </div>
@@ -12,41 +14,44 @@
   </div>
 </div>
 <div class="container-fluid">
-<div class="scopes">
-  <div class="row">
-    <div class="col-sm-3 col-md-6 col-lg-4">
-      <div class="title-container">
-        <h3>Recently added</h3>
+  <div class="scopes">
+    <div class="row">
+      <div class="col-sm-3 col-md-6 col-lg-4">
+        <div class="title-container">
+          <h3>Recently added</h3>
+        </div>
+        <ul>
+          <% @products_most_recent.each do |product| %>
+            <p>
+              <li><%= link_to product.name, product_path(product) %></li>
+            </p>
+          <% end %>
+        </ul>
       </div>
-
-      <ul>
-        <% @products_most_recent.each do |product| %>
-        <p><li><%= link_to product.name, product_path(product) %></li></p>
-        <% end %>
-      </ul>
-    </div>
-
-    <div class="col-sm-3 col-md-6 col-lg-4">
-      <div class="title-container">
-        <h3>Most Reviews</h3>
+      <div class="col-sm-3 col-md-6 col-lg-4">
+        <div class="title-container">
+          <h3>Most Reviews</h3>
+        </div>
+        <ul>
+          <% @products_most_reviews.each do |product| %>
+            <p>
+              <li><%= link_to product.name, product_path(product) %></li>
+            </p>
+          <% end %>
+        </ul>
       </div>
-      <ul>
-        <% @products_most_reviews.each do |product| %>
-        <p><li><%= link_to product.name, product_path(product) %></li></p>
-        <% end %>
-      </ul>
-    </div>
-
-    <div class="col-sm-3 col-md-6 col-lg-4">
-      <div class="title-container">
-        <h3>USA Products</h3>
+      <div class="col-sm-3 col-md-6 col-lg-4">
+        <div class="title-container">
+          <h3>USA Products</h3>
+        </div>
+        <ul>
+          <% @products_local_product.each do |product| %>
+            <p>
+              <li><%= link_to product.name, product_path(product) %></li>
+            </p>
+          <% end %>
+        </ul>
       </div>
-      <ul>
-        <% @products_local_product.each do |product| %>
-        <p><li><%= link_to product.name, product_path(product) %></li></p>
-        <% end %>
-      </ul>
     </div>
   </div>
-</div>
 </div>
