@@ -140,11 +140,21 @@ li {
   padding-right: 490px;
 }
 
-.edit-product, .edit-reviews, .add-reviews {
+.edit-reviews, .add-reviews {
   margin: 0 auto;
   float: none;
   margin-bottom: 10px;
   display: flex;
   text-align: center;
   font-size: large;
+}
+
+.edit-product, .new-product {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  display: flex-inline;
+}
+
+.new-prod-title, .edit-prod-title {
+  text-align: center;
 }
