@@ -18,11 +18,18 @@
   background-color: #fff;
 }
 .navbar {
-  a {
-    color: var(--bs-blue);
-  }
+  font-size: medium;
 }
-.card {
+
+a {
+  color: var(--bs-blue);
+}
+
+#home, #all-products, #new-products {
+  color: adjust-hue($color: #3f3f3f, $degrees: 0);
+}
+
+#bio {
   margin: 0 auto;
   float: none;
   margin-bottom: 10px;
@@ -76,9 +83,59 @@
 .products {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
+  float: inline;
+  padding-bottom: 10px;
+  padding-left: 600px;
+  display: inline-flexbox;
+  font-size: large;
+  width: 130rem;
 }
 
-.product {
-  width: 30%;
-  min-width: 300px;
+ul {
+  text-align: justify;
+}
+ul:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+ul:before {
+  content: '';
+  display: block;
+  margin-top: -1.25em;
+}
+li {
+  display: inline-block;
+  margin-right: -.25em;
+  position: relative;
+  top: 1.25em;
+}
+
+.products-title {
+  padding-bottom: 50px;
+  padding-left: 130px;
+  margin-left: 250px;
+  text-align: center;
+  opacity: 0.7;
+}
+
+#products-page {
+  opacity: 0.7;
+  background-color: #ceeee0;
+  padding: 5px;
+  text-align: center;
+}
+
+.card-title {
+  text-align: center;
+}
+
+#review-link {
+  text-align: center;
+  padding-left: 500px;
+}
+
+.product-links {
+  padding-right: 490px;
 }
