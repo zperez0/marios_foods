@@ -1,6 +1,6 @@
 <header>
   <div class="container">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-light" style="background-color: #fff;">
       <div class="container-fluid">
         <div class="navbar-header">
           <% if is_admin? %>
@@ -15,15 +15,21 @@
           <% end %>
         </div>
         <ul class="nav navbar-nav navbar-right">
-          <button class="btn btn-link">
-            <%= link_to "Home", root_path, class: "nav-brand" %>
+          <button class="btn btn-link" style="font-size: medium">
+            <div id="home">
+              <%= link_to "Home", root_path, class: "nav-brand" %>
+            </div>
           </button>
-          <button class="btn btn-link">
-            <%= link_to "All Products", products_path %>
+          <button class="btn btn-link" style="font-size: medium">
+            <div id="all-products">
+              <%= link_to "All Products", products_path %>
+            </div>
           </button>
           <% if is_admin? %>
-            <button class="btn btn-link">
-              <%= link_to "New Product", new_product_path %>
+            <button class="btn btn-link" style="font-size: medium">
+              <div id="new-products">
+                <%= link_to "New Product", new_product_path %>
+              </div>
             </button>
           <% end %>
         </ul>
