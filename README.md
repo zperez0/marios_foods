@@ -55,7 +55,7 @@ postgres
 rake db:setup
 ```
 * _To  create migration (type in terminal):_
-* _for more inforamation on migrations check out [Rails Guides documentations](https://guides.rubyonrails.org/active_record_migrations.html)_
+* _for more inforamation on migrations check out [Rails Guides](https://guides.rubyonrails.org/active_record_migrations.html)_
 ```
 rake db:migrate
 ```
