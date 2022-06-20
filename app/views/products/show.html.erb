@@ -5,11 +5,11 @@
       <div class="container">
         <div class="row">
           <div class="d-flex align-content-stretch flex-wrap">
-            <h4 class="country">Country: <%= @product.country_of_orgin %></h4>
-            <h3 class="cost">$<%= @product.cost %></h3>
+            <h4>Country: <%= @product.country_of_orgin %></h4>
+            <h3>$<%= @product.cost %></h3>
           </div>
         </div>
-        <h3 class="reviews">Reviews:</h3>
+        <h3>Reviews:</h3>
         <% if @product.reviews.any? %>
           <div id="review-link">
             <% @product.reviews.each do |review| %>
@@ -37,8 +37,10 @@
               </div>
             </div>
           </div>
-          <p><%= link_to "Add a review", new_product_review_path(@product) %></p>
-          <p><%= link_to "Return to products", products_path %></p>
+          <div class="product-links">
+            <p><%= link_to "Add a review", new_product_review_path(@product) %></p>
+            <p><%= link_to "Return to products", products_path %></p>
+          </div>
         </div>
       </div>
     </div>
