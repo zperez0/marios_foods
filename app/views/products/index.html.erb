@@ -10,18 +10,15 @@
 <% if @products.any? %>
   <ul>
     <% @products.each do |product| %>
-      <div class="products">
-        <div class="row">
-          <div class="col-sm-3 col-md-6 col-lg-4">
-            <div class="title-container">
-              <p>
-                <li><%= link_to product.name, product_path(product) %></li>
-              </p>
-            </div>
-          </div>
+      <div class="products-list">
+        <div class="title-container">
+          <p>
+            <li><%= link_to product.name, product_path(product) %></li>
+          </p>
         </div>
       </div>
     <% end %>
+    <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
   </ul>
 <% else %>
   <p>There are no products yet.</p>
