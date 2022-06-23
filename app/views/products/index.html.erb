@@ -8,18 +8,21 @@
   </div>
 </div>
 <% if @products.any? %>
-  <ul>
+  <div class="list-group">
     <% @products.each do |product| %>
       <div class="products-list">
         <div class="title-container">
-          <p>
-            <li><%= link_to product.name, product_path(product) %></li>
-          </p>
+          <a class="list-group-item list-group-item-action"
+            <%= link_to product.name, product_path(product) %>
+          </a>
+          </div>
         </div>
+      <% end %>
+      <div class="paginate">
+        <%= will_paginate @products, renderer: BootstrapPagination::Rails,
+    previous_label: 'Previous', next_label: 'Next' %>
       </div>
-    <% end %>
-    <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
-  </ul>
-<% else %>
-  <p>There are no products yet.</p>
-<% end %>
+    </div>
+  <% else %>
+    <p>There are no products yet.</p>
+  <% end %>
