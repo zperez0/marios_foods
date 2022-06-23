@@ -4,43 +4,57 @@
       <h1 class="card-title"><%= @product.name %></h1>
       <div class="container">
         <div class="row">
-          <div class="d-flex align-content-stretch flex-wrap">
-            <h4>Country: <%= @product.country_of_orgin %></h4>
-            <h3>$<%= @product.cost %></h3>
-          </div>
-        </div>
-        <h3>Reviews:</h3>
-        <% if @product.reviews.any? %>
-          <div id="review-link">
-            <% @product.reviews.each do |review| %>
-              <ul>
-                <li class="card-text">
-                  <%= link_to review.author + " - " + review.rating.to_s + " ⭐", product_review_path(@product, review) %>
-                </li>
-              </ul>
-            <% end %>
-          <% else %>
-            <p>No reviews are listed for this product.</p>
-          <% end %>
-          <div class="edit_delete">
-            <div class="thumbmail">
-              <div class="caption">
-                <br>
-                <% if is_admin? %>
-                  <p>
-                    <%= link_to "Edit", edit_product_path(@product), class: "btn btn-default" %>
-                    <%= link_to "Delete", product_path(@product), class: "btn btn-danger",
-                                                        :data => { :confirm => "Are you sure you want to delete #{@product.name}?",
-                                                                  :method => "delete" } %>
-                  </p>
-                <% end %>
+          <div class="col">
+            <div class="d-flex align-content-stretch flex-wrap">
+              <div class="country-cost">
+                <h4>Country: <%= @product.country_of_orgin %></h4>
+                <h4>$<%= @product.cost %></h4>
               </div>
             </div>
           </div>
-          <div class="product-links">
-            <p><%= link_to "Add a review", new_product_review_path(@product) %></p>
-            <p><%= link_to "Return to products", products_path %></p>
+        </div>
+        <div class="col">
+          <div id="review-link">
+            <h3>Reviews:</h3>
+            <% if @product.reviews.any? %>
+              <% @product.reviews.each do |review| %>
+                <ul>
+                  <li class="card-text">
+                    <%= link_to review.author + " - " + review.rating.to_s + " ⭐", product_review_path(@product, review) %>
+                  </li>
+                </ul>
+              <% end %>
+            <% else %>
+              <p>No reviews are listed for this product.</p>
+            <% end %>
           </div>
+        </div>
+        <div class="product-links">
+          <p>
+            <%= link_to "Add a review", new_product_review_path(@product), class: "btn btn-primary" %>
+          </p>
+          <p>
+            <%= link_to "Return to products", products_path, class:"btn btn-primary" %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <div class="edit_delete">
+    <div class="thumbmail">
+      <div class="caption">
+        <div class="admin-btn">
+          <br>
+          <% if is_admin? %>
+            <p>
+              <%= link_to "Edit", edit_product_path(@product), class: "btn btn-default" %>
+              <%= link_to "Delete", product_path(@product), class: "btn btn-danger",
+                                                            :data => { :confirm => "Are you sure you want to delete #{@product.name}?",
+                                                                      :method => "delete" } %>
+            </p>
+          <% end %>
         </div>
       </div>
     </div>
