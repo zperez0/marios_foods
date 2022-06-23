@@ -26,14 +26,14 @@ a {
 }
 
 @media screen and (max-width: 800px) {
-  .column {
+  .body {
     flex: 50%;
     max-width: 50%;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .column {
+  .body {
     flex: 100%;
     max-width: 100%;
   }
@@ -94,14 +94,17 @@ a {
   }
 }
 
-
 .products-list {
   display: flex;
   flex-wrap: wrap;
   float: inline;
-  padding-bottom: 10px;
   padding-left: 100px;
   font-size: large;
+}
+
+.paginate {
+  padding-left: 80px;
+  display: grid;
 }
 
 .products {
@@ -139,7 +142,6 @@ li {
 .products-title {
   padding-bottom: 50px;
   padding-left: 110px;
-  // margin-left: 250px;
   text-align: center;
   opacity: 0.7;
 }
