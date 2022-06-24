@@ -17,6 +17,7 @@ Each product can also have reviews added to it.
 * _PostgreSQL_
 * _faker_
 * _devise_
+* _rails admin_
 
 ## Description
 
