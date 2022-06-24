@@ -49,7 +49,7 @@ a {
   margin-bottom: 10px;
   display: flex;
   text-align: center;
-  width: 50rem;
+  width: 60rem;
   font-size: large;
 }
 
@@ -149,21 +149,122 @@ li {
 #products-page {
   opacity: 0.7;
   background-color: #ceeee0;
-  padding: 5px;
+  width: 100rem;
+  height: 45rem;
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  display: flex;
   text-align: center;
+  font-size: large;
+  padding-top: 10px;
 }
 
-.card-title {
+
+.product-name {
+  margin: 0 auto;
+  float: none;
+  margin-top: 25px;
+  margin-bottom: 35px;
+  display: grid;
   text-align: center;
+  padding-right: 170px;
+}
+
+
+.country-cost {
+  margin-left: 210px;
+  padding: 10px;
+  padding-left: 30px;
+  padding-bottom: 50px;
+  text-align: center;
+  width: 50rem;
+}
+
+.country-cost h4:first-of-type {
+  float: left;
+}
+
+.country-cost h4:last-of-type {
+  float: right;
 }
 
 #review-link {
   text-align: center;
-  padding-left: 500px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  padding-left: 70px;
+  display: flex;
+}
+
+#review-link h3 {
+  float: left;
+}
+
+#review-link li:last-of-type {
+  float: right;
 }
 
 .product-links {
-  padding-right: 490px;
+  margin-left: 300px;
+  padding: 10px;
+  padding-left: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+  width: 35rem;
+}
+
+.product-links p:first-of-type {
+  float: left;
+}
+
+.product-links p:last-of-type {
+  float: right;
+}
+
+.admin-btn {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  display: grid;
+  text-align: center;
+}
+
+#reviews-page {
+  opacity: 0.7;
+  background-color: #ceeee0;
+  width: 100rem;
+  height: 40rem;
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  display: flex;
+  text-align: center;
+  font-size: large;
+  padding-top: 10px;
+}
+
+.rating-body {
+  margin: 0 auto;
+  float: none;
+  width: 100rem;
+  display: grid;
+  text-align: center;
+  padding-right: 170px;
+}
+
+.review-title {
+  margin: 0 auto;
+  float: none;
+  margin-top: 25px;
+  margin-bottom: 35px;
+  display: grid;
+  text-align: center;
+  padding-right: 170px;
+}
+
+.return-link {
+  padding-top: 20px;
 }
 
 .edit-reviews, .add-reviews {
